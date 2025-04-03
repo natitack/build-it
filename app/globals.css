@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+:root {
+  --osu-orange: #D73F09;
+  --osu-black: #000000;
+  --osu-warm-gray: #5B6065;
+  --osu-light-orange: #FF4A0C;
+  --osu-light-gray: #F0F0F0;
+}
+
+main {
+  font-family: "Stratum2", "Open Sans", system-ui, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: var(--osu-black);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 2rem 0;
+  width: 100%;
+  font-weight: 600;
+  background-color: var(--osu-black);
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  color: var(--osu-black);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid var(--osu-orange);
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+input[type='file']::file-selector-button {
+  background-color: var(--osu-black);
+  border: none;
+  padding: 0.625rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+input[type='file']::file-selector-button:hover {
+  background-color: var(--osu-orange);
+}
+
+input[type='text'] {
+  padding: 0.5rem;
+  border: 2px solid var(--osu-warm-gray);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+input[type='text']:focus {
+  border-color: var(--osu-orange);
+  outline: none;
+}
+
+input[type='text']:disabled {
+  background-color: var(--osu-light-gray);
+  border-color: var(--osu-warm-gray);
+}
+
+button {
+  border-radius: 0.25rem;
+  background-color: var(--osu-black);
+  color: #ffffff;
+  padding: 0.625rem 1rem;
+  transition: all 0.2s;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: var(--osu-orange);
+}
+
+button:disabled {
+  background-color: var(--osu-warm-gray);
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: var(--osu-black);
+  color: #ffffff;
+  padding: 0.75rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+tr {
+  border-bottom: 1px solid var(--osu-light-gray);
+}
+
+tr:hover {
+  background-color: var(--osu-light-gray);
+}
+
+td {
+  padding: 0.75rem;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.action-button {
+  background-color: var(--osu-orange);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button:hover {
+  background-color: var(--osu-light-orange);
+}
+
+.delete-button {
+  background-color: var(--osu-warm-gray);
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: var(--osu-black);
+}
+
+.add-button {
+  background-color: var(--osu-orange);
+  color: white;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background-color: var(--osu-light-orange);
+}
