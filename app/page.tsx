@@ -338,9 +338,9 @@ export default function Page() {
 
   return (
     <main>
-      <h1>CS467 App Template</h1>
+      <h1>Build-It Initialized</h1>
       <div style={{ marginBottom: '3rem' }}>
-        <p>This is a starter NextJS application that integrates with AWS S3 and DynamoDB.  It can be used as a starting point for your own projects.  AWS credentials must be configured in the ~/.aws/credentials on your dev workstation or in the .env.local file.</p>
+        <p>This is a starter app for the Build-It project.</p>
       </div>
       <div className="content-wrapper">
         {error && <div className="error-message">{error}</div>}
