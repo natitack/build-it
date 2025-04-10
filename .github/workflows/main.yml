@@ -24,7 +24,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-1
-          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         run: aws s3 ls
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -42,6 +41,5 @@ jobs:
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             AWS_DEFAULT_REGION: us-east-1
-            AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
 # This line is what deploys the single page React web app to S3 
         run: aws s3 sync --acl public-read out/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
