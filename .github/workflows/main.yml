@@ -1,0 +1,47 @@
+# This file defines the triggers, environment and steps to take to deploy the code in this repository
+# More details about the syntax and capabilities can be found here: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+#
+# This is the name of the action
+name: Deploy to S3
+# These are the action triggers.  
+# 'workflow_dispatch' allows you to run the job in the console without pushing any code. 
+# 'push' will run the job when changes are made to the 'main' branch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+# The following defines the job that runs on the triggers mentioned above.
+jobs:
+  deploy:
+# The 'runs-on' command choses an operating system to run the deployment commands.
+    runs-on: ubuntu-latest
+# The 'environment' command choses which set of environment secrets and variables to use for the run steps
+    environment: production
+    steps:
+      - name: Test AWS Credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-1
+          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+        run: aws s3 ls
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build React App
+        run: npm run build
+# Set up the environment with the AWS secrets that were configured in the environment settings
+      - name: Deploy to S3 bucket
+        env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_DEFAULT_REGION: us-east-1
+            AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+# This line is what deploys the single page React web app to S3 
+        run: aws s3 sync --acl public-read out/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
