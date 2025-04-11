@@ -17,7 +17,7 @@ jobs:
 # The 'runs-on' command choses an operating system to run the deployment commands.
     runs-on: ubuntu-latest
 # The 'environment' command choses which set of environment secrets and variables to use for the run steps
-    environment: production
+    environment: deploy
     steps:
       - name: Test AWS Credentials
         env:
