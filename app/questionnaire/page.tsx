@@ -1,16 +1,20 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function QuestionnairePage() {
   const [address, setAddress] = useState('');
   const [sewerConnected, setSewerConnected] = useState('');
   const [hoa, setHoa] = useState('');
 
+  const router = useRouter();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log({ address, sewerConnected, hoa });
     alert('Submitted!');
+    router.push('/new-report');
   };
 
   const addressInput = (
