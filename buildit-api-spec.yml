@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  version: '1'
+  title: buildit
+  description: Potential REST API spec for zoning tool
+servers:
+- url: "https://something something .amazonaws.com/prod/{basePath}"
+  variables:
+    basePath:
+      default: ""
+paths:
+  /coordinates:
+    post:
+      description: Get coordinates from an address
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  description: The address to geocode
+      responses:
+        '200':
+          description: Coordinates for the given address
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  latitude:
+                    type: number
+                    format: float
+                  longitude:
+                    type: number
+                    format: float
+        '400':
+          description: Invalid address
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /zoning:
+    post:
+      description: Get zoning designation from coordinates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                latitude:
+                  type: number
+                  format: float
+                longitude:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Zoning designation for the given coordinates
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  zoningDesignation:
+                    type: string
+        '400':
+          description: Invalid coordinates
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /zoning/{designation}:
+    get:
+      description: Get related zoning information for a zoning designation
+      parameters:
+      - name: "designation"
+        in: "path"
+        description: The zoning designation
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Array of related zoning information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Invalid zoning designation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    Item:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          description: ID of the item
+        name:
+          type: string
+          description: Name of the item
+        description:
+          type: string
+          description: Description of the thing

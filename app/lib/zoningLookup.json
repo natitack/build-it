@@ -1,0 +1,453 @@
+{
+    "RL": {
+        "Residential": {
+            "Single-room occupancy": "Permitted",
+            "Single-unit detached dwelling": "Permitted",
+            "Accessory dwelling units (ADUs)": "Permitted",
+            "Manufactured homes and prefabricated structures on individual lots": "Permitted",
+            "Manufactured home park": "Conditional Use",
+            "Townhomes": "Permitted",
+            "Duplex": "Permitted",
+            "Triplex": "Permitted",
+            "Quadplex": "Permitted",
+            "Residential care home (5 or fewer residents)": "Permitted",
+            "Adult day care": "Permitted",
+            "Residential care facility (6 or more residents)": "Not Permitted",
+            "Family childcare home (16 or fewer children)": "Permitted",
+            "Multi-unit residential (more than 4 units)": "Not Permitted",
+            "Micro-units": "Not Permitted",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory uses and structures": "Permitted",
+            "Cottage housing development": "Not Permitted",
+            "Cottage cluster development": "Permitted"
+        },
+        "Public and Institutional": {
+            "Places of worship": "Conditional Use",
+            "Clubs, lodges, similar uses": "Conditional Use",
+            "Government offices and facilities (administration, public safety, utilities, and similar uses)": "Conditional Use",
+            "Libraries, museums, community centers, and similar uses": "Conditional Use",
+            "Utilities (above ground)": "Conditional Use",
+            "Neighborhood parks": "Permitted",
+            "Community parks": "Conditional Use",
+            "Regional parks": "Conditional Use",
+            "Recreational facilities (public)": "Conditional Use",
+            "Schools": "Conditional Use",
+            "Cemetery/mausoleum": "Conditional Use",
+            "Child care facility (17 or more children)": "Conditional Use",
+            "Hospital": "Conditional Use",
+            "Mobility hub": "Permitted"
+        },
+        "Neighborhood Commercial": {
+            "Child care facility (13 or more children)": "Conditional Use / Not Permitted",
+            "Food and beverage services less than 2,000 square feet (with or without alcohol)": "Conditional Use / Not Permitted",
+            "Laundromats and dry cleaners": "Conditional Use / Not Permitted",
+            "Retail sales and services": "Conditional Use / Not Permitted",
+            "Personal services (e.g., barber shops, salons, similar uses)": "Conditional Use / Not Permitted",
+            "Repair services, conducted entirely within building; excluding vehicle repair, small engine repair and similar services": "Conditional Use / Not Permitted",
+            "Offices and clinics": "Conditional Use / Not Permitted",
+            "Mixed-use building": "Conditional Use / Not Permitted"
+        },
+        "Miscellaneous Uses": {
+            "Bed and breakfast inn": "Conditional Use",
+            "Boarding kennel": "Not Permitted",
+            "Destination resorts": "Not Permitted",
+            "Diagnostic testing, counseling, administrative offices, meeting facilities for nonprofit and public community service programs for children and families": "Conditional Use",
+            "Farm use, agriculture": "Not Permitted",
+            "Office uses lawfully existing prior to the adoption date of the ordinance codified in this code": "Not Permitted",
+            "Plant nursery": {
+                "Existing": "Permitted",
+                "New (limited to 1 acre)": "Conditional Use",
+                "New (larger than 1 acre)": "Not Permitted"
+            },
+            "Shelters": "Permitted",
+            "Short-term rental": "Permitted",
+            "Small hydroelectric facility": "Permitted",
+            "Veterinary clinic": {
+                "Small animal (only)": "Conditional Use",
+                "Large animal": "Conditional Use"
+            },
+            "Wireless and broadcast communication facilities": "See BDC Chapter 3.7"
+        },
+        "Setbacks": {
+            "Front": "20 ft. Exception: On lots with multiple frontages, one frontage must have a 20 ft. setback, others may be 10 ft. if garage/carport access is set back 20 ft.",
+            "Rear": "20 ft. Exception: On corner lots within a platted subdivision, the minimum rear setback is 10 ft.",
+            "Side": "10 ft."
+        }
+    },
+    "RS": {
+        "Residential": {
+            "Single-room occupancy": "Permitted",
+            "Single-unit detached dwelling": "Permitted",
+            "Accessory dwelling units (ADUs)": "Permitted",
+            "Manufactured homes and prefabricated structures on individual lots": "Permitted",
+            "Manufactured home park": "Conditional Use",
+            "Townhomes": "Permitted",
+            "Duplex": "Permitted",
+            "Triplex": "Permitted",
+            "Quadplex": "Permitted",
+            "Residential care home (5 or fewer residents)": "Permitted",
+            "Adult day care": "Permitted",
+            "Residential care facility (6 or more residents)": "Not Permitted",
+            "Family childcare home (16 or fewer children)": "Permitted",
+            "Multi-unit residential (more than 4 units)": "Not Permitted",
+            "Micro-units": "Permitted",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory uses and structures": "Permitted",
+            "Cottage housing development": "Permitted",
+            "Cottage cluster development": "Permitted"
+        },
+        "Public and Institutional": {
+            "Places of worship": "Conditional Use",
+            "Clubs, lodges, similar uses": "Conditional Use",
+            "Government offices and facilities (administration, public safety, utilities, and similar uses)": "Conditional Use",
+            "Libraries, museums, community centers, and similar uses": "Conditional Use",
+            "Utilities (above ground)": "Conditional Use",
+            "Neighborhood parks": "Permitted",
+            "Community parks": "Conditional Use",
+            "Regional parks": "Conditional Use",
+            "Recreational facilities (public)": "Conditional Use",
+            "Schools": "Conditional Use",
+            "Cemetery/mausoleum": "Conditional Use",
+            "Child care facility (17 or more children)": "Conditional Use",
+            "Hospital": "Conditional Use",
+            "Mobility hub": "Permitted"
+        },
+        "Neighborhood Commercial": {
+            "Child care facility (13 or more children)": "Permitted / Not Permitted",
+            "Food and beverage services less than 2,000 square feet (with or without alcohol)": "Conditional Use / Not Permitted",
+            "Laundromats and dry cleaners": "Conditional Use / Not Permitted",
+            "Retail sales and services": "Conditional Use / Not Permitted",
+            "Personal services (e.g., barber shops, salons, similar uses)": "Permitted / Not Permitted",
+            "Repair services, conducted entirely within building; excluding vehicle repair, small engine repair and similar services": "Conditional Use / Not Permitted",
+            "Offices and clinics": "Conditional Use / Not Permitted",
+            "Mixed-use building": "Conditional Use / Not Permitted"
+        },
+        "Miscellaneous Uses": {
+            "Bed and breakfast inn": "Conditional Use",
+            "Boarding kennel": "Not Permitted",
+            "Destination resorts": "Not Permitted",
+            "Diagnostic testing, counseling, administrative offices, meeting facilities for nonprofit and public community service programs for children and families": "Conditional Use",
+            "Farm use, agriculture": "Not Permitted",
+            "Office uses lawfully existing prior to the adoption date of the ordinance codified in this code": "Not Permitted",
+            "Plant nursery": {
+                "Existing": "Permitted",
+                "New (limited to 1 acre)": "Conditional Use",
+                "New (larger than 1 acre)": "Not Permitted"
+            },
+            "Shelters": "Permitted",
+            "Short-term rental": "Permitted",
+            "Small hydroelectric facility": "Permitted",
+            "Veterinary clinic": {
+                "Small animal (only)": "Not Permitted",
+                "Large animal": "Not Permitted"
+            },
+            "Wireless and broadcast communication facilities": "See BDC Chapter 3.7"
+        },
+        "Setbacks": {
+            "Front": "10 ft., except garages/carports with street access must be set back 20 ft.",
+            "Rear": "5 ft. Exception: Development per BDC Chapter 3.8 may differ.",
+            "Side": "5 ft."
+        }
+    },
+    "RM-10": {
+        "Residential": {
+            "Single-room occupancy": "Permitted",
+            "Single-unit detached dwelling": "Permitted",
+            "Accessory dwelling units (ADUs)": "Permitted",
+            "Manufactured homes and prefabricated structures on individual lots": "Permitted",
+            "Manufactured home park": "Conditional Use",
+            "Townhomes": "Permitted",
+            "Duplex": "Permitted",
+            "Triplex": "Permitted",
+            "Quadplex": "Permitted",
+            "Residential care home (5 or fewer residents)": "Permitted",
+            "Adult day care": "Permitted",
+            "Residential care facility (6 or more residents)": "Conditional Use",
+            "Family childcare home (16 or fewer children)": "Permitted",
+            "Multi-unit residential (more than 4 units)": "Permitted",
+            "Micro-units": "Permitted",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory uses and structures": "Permitted",
+            "Cottage housing development": "Permitted",
+            "Cottage cluster development": "Permitted"
+        },
+      "Public and Institutional": {
+            "Places of worship": "Conditional Use",
+            "Clubs, lodges, similar uses": "Conditional Use",
+            "Government offices and facilities (administration, public safety, utilities, and similar uses)": "Conditional Use",
+            "Libraries, museums, community centers, and similar uses": "Conditional Use",
+            "Utilities (above ground)": "Conditional Use",
+            "Neighborhood parks": "Permitted",
+            "Community parks": "Conditional Use",
+            "Regional parks": "Conditional Use",
+            "Recreational facilities (public)": "Conditional Use",
+            "Schools": "Conditional Use",
+            "Cemetery/mausoleum": "Conditional Use",
+            "Child care facility (17 or more children)": "Conditional Use",
+            "Hospital": "Conditional Use",
+            "Mobility hub": "Permitted"
+        },
+        "Neighborhood Commercial": {
+            "Child care facility (13 or more children)": "Permitted / Not Permitted",
+            "Food and beverage services less than 2,000 square feet (with or without alcohol)": "Conditional Use / Not Permitted",
+            "Laundromats and dry cleaners": "Conditional Use / Not Permitted",
+            "Retail sales and services": "Conditional Use / Not Permitted",
+            "Personal services (e.g., barber shops, salons, similar uses)": "Permitted / Not Permitted",
+            "Repair services, conducted entirely within building; excluding vehicle repair, small engine repair and similar services": "Conditional Use / Not Permitted",
+            "Offices and clinics": "Conditional Use / Not Permitted",
+            "Mixed-use building": "Conditional Use / Not Permitted"
+        },
+        "Miscellaneous Uses": {
+            "Bed and breakfast inn": "Conditional Use",
+            "Boarding kennel": "Not Permitted",
+            "Destination resorts": "Not Permitted",
+            "Diagnostic testing, counseling, administrative offices, meeting facilities for nonprofit and public community service programs for children and families": "Conditional Use",
+            "Farm use, agriculture": "Not Permitted",
+            "Office uses lawfully existing prior to the adoption date of the ordinance codified in this code": "Not Permitted",
+            "Plant nursery": {
+                "Existing": "Permitted",
+                "New (limited to 1 acre)": "Conditional Use",
+                "New (larger than 1 acre)": "Not Permitted"
+            },
+            "Shelters": "Permitted",
+            "Short-term rental": "Permitted",
+            "Small hydroelectric facility": "Permitted",
+            "Veterinary clinic": {
+                "Small animal (only)": "Not Permitted",
+                "Large animal": "Not Permitted"
+            },
+            "Wireless and broadcast communication facilities": "See BDC Chapter 3.7"
+        },
+        "Setbacks": {
+            "Front": "10 ft., except garages/carports with street access must be set back 20 ft.",
+            "Rear": "5 ft. Exception: Development per BDC Chapter 3.8 may differ.",
+            "Side": "5 ft."
+        }
+    },
+    "RM": {
+        "Residential": {
+            "Single-room occupancy": "Permitted",
+            "Single-unit detached dwelling": "Permitted",
+            "Accessory dwelling units (ADUs)": "Permitted",
+            "Manufactured homes and prefabricated structures on individual lots": "Permitted",
+            "Manufactured home park": "Permitted",
+            "Townhomes": "Permitted",
+            "Duplex": "Permitted",
+            "Triplex": "Permitted",
+            "Quadplex": "Permitted",
+            "Residential care home (5 or fewer residents)": "Permitted",
+            "Adult day care": "Permitted",
+            "Residential care facility (6 or more residents)": "Permitted",
+            "Family childcare home (16 or fewer children)": "Permitted",
+            "Multi-unit residential (more than 4 units)": "Permitted",
+            "Micro-units": "Permitted",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory uses and structures": "Permitted",
+            "Cottage housing development": "Permitted",
+            "Cottage cluster development": "Permitted"
+        },
+        "Public and Institutional": {
+            "Places of worship": "Conditional Use",
+            "Clubs, lodges, similar uses": "Conditional Use",
+            "Government offices and facilities (administration, public safety, utilities, and similar uses)": "Conditional Use",
+            "Libraries, museums, community centers, and similar uses": "Conditional Use",
+            "Utilities (above ground)": "Conditional Use",
+            "Neighborhood parks": "Permitted",
+            "Community parks": "Conditional Use",
+            "Regional parks": "Conditional Use",
+            "Recreational facilities (public)": "Conditional Use",
+            "Schools": "Conditional Use",
+            "Cemetery/mausoleum": "Conditional Use",
+            "Child care facility (17 or more children)": "Conditional Use",
+            "Hospital": "Conditional Use",
+            "Mobility hub": "Permitted"
+        },
+        "Neighborhood Commercial": {
+            "Child care facility (13 or more children)": "Permitted",
+            "Food and beverage services less than 2,000 square feet (with or without alcohol)": "Conditional Use / Permitted",
+            "Laundromats and dry cleaners": "Permitted",
+            "Retail sales and services": "Permitted",
+            "Personal services (e.g., barber shops, salons, similar uses)": "Permitted",
+            "Repair services, conducted entirely within building; excluding vehicle repair, small engine repair and similar services": "Conditional Use / Permitted",
+            "Offices and clinics": "Permitted",
+            "Mixed-use building": "Permitted"
+        },
+        "Miscellaneous Uses": {
+            "Bed and breakfast inn": "Conditional Use",
+            "Boarding kennel": "Not Permitted",
+            "Destination resorts": "Not Permitted",
+            "Diagnostic testing, counseling, administrative offices, meeting facilities for nonprofit and public community service programs for children and families": "Conditional Use",
+            "Farm use, agriculture": "Not Permitted",
+            "Office uses lawfully existing prior to the adoption date of the ordinance codified in this code": "Permitted",
+            "Plant nursery": {
+                "Existing": "Permitted",
+                "New (limited to 1 acre)": "Conditional Use",
+                "New (larger than 1 acre)": "Not Permitted"
+            },
+            "Shelters": "Permitted",
+            "Short-term rental": "Permitted",
+            "Small hydroelectric facility": "Permitted",
+            "Veterinary clinic": {
+                "Small animal (only)": "Not Permitted",
+                "Large animal": "Not Permitted"
+            },
+            "Wireless and broadcast communication facilities": "See BDC Chapter 3.7"
+        },
+        "Setbacks": {
+            "Front": "10 ft., except garages/carports with street access must be set back 20 ft.",
+            "Rear": "5 ft. Exception: Development per BDC Chapter 3.8 may differ.",
+            "Side": "5 ft."
+        }
+    },
+    "RH": {
+        "Residential": {
+            "Single-room occupancy": "Permitted",
+            "Single-unit detached dwelling": "Not Permitted",
+            "Accessory dwelling units (ADUs)": "Permitted",
+            "Manufactured homes and prefabricated structures on individual lots": "Permitted",
+            "Manufactured home park": "Permitted",
+            "Townhomes": "Permitted",
+            "Duplex": "Permitted",
+            "Triplex": "Permitted",
+            "Quadplex": "Permitted",
+            "Residential care home (5 or fewer residents)": "Permitted",
+            "Adult day care": "Permitted",
+            "Residential care facility (6 or more residents)": "Permitted",
+            "Family childcare home (16 or fewer children)": "Permitted",
+            "Multi-unit residential (more than 4 units)": "Permitted",
+            "Micro-units": "Permitted",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory uses and structures": "Permitted",
+            "Cottage housing development": "Permitted",
+            "Cottage cluster development": "Permitted"
+        },
+        "Public and Institutional": {
+            "Places of worship": "Conditional Use",
+            "Clubs, lodges, similar uses": "Conditional Use",
+            "Government offices and facilities (administration, public safety, utilities, and similar uses)": "Conditional Use",
+            "Libraries, museums, community centers, and similar uses": "Conditional Use",
+            "Utilities (above ground)": "Conditional Use",
+            "Neighborhood parks": "Permitted",
+            "Community parks": "Conditional Use",
+            "Regional parks": "Conditional Use",
+            "Recreational facilities (public)": "Conditional Use",
+            "Schools": "Conditional Use",
+            "Cemetery/mausoleum": "Conditional Use",
+            "Child care facility (17 or more children)": "Conditional Use",
+            "Hospital": "Conditional Use",
+            "Mobility hub": "Permitted"
+        },
+        "Neighborhood Commercial": {
+            "Child care facility (13 or more children)": "Permitted",
+            "Food and beverage services less than 2,000 square feet (with or without alcohol)": "Permitted",
+            "Laundromats and dry cleaners": "Permitted",
+            "Retail sales and services": "Permitted",
+            "Personal services (e.g., barber shops, salons, similar uses)": "Permitted",
+            "Repair services, conducted entirely within building; excluding vehicle repair, small engine repair and similar services": "Conditional Use / Permitted",
+            "Offices and clinics": "Permitted",
+            "Mixed-use building": "Permitted"
+        },
+        "Miscellaneous Uses": {
+            "Bed and breakfast inn": "Conditional Use",
+            "Boarding kennel": "Not Permitted",
+            "Destination resorts": "Not Permitted",
+            "Diagnostic testing, counseling, administrative offices, meeting facilities for nonprofit and public community service programs for children and families": "Conditional Use",
+            "Farm use, agriculture": "Not Permitted",
+            "Office uses lawfully existing prior to the adoption date of the ordinance codified in this code": "Permitted",
+            "Plant nursery": {
+                "Existing": "Permitted",
+                "New (limited to 1 acre)": "Conditional Use",
+                "New (larger than 1 acre)": "Not Permitted"
+            },
+            "Shelters": "Permitted",
+            "Short-term rental": "Permitted",
+            "Small hydroelectric facility": "Permitted",
+            "Veterinary clinic": {
+                "Small animal (only)": "Not Permitted",
+                "Large animal": "Not Permitted"
+            },
+            "Wireless and broadcast communication facilities": "See BDC Chapter 3.7"
+        },
+        "Setbacks": {
+            "Front": "10 ft., except garages/carports with street access must be set back 20 ft.",
+            "Rear": "5 ft. Exception: Development per BDC Chapter 3.8 may differ.",
+            "Side": "5 ft."
+        }
+    },
+    "UAR": {
+        "Residential": {
+            "Single-room occupancy": "Not Permitted",
+            "Single-unit detached dwelling": "Permitted",
+            "Accessory dwelling units (ADUs)": "Permitted",
+            "Manufactured homes and prefabricated structures on individual lots": "Not Permitted",
+            "Manufactured home park": "Not Permitted",
+            "Townhomes": "Not Permitted",
+            "Duplex": "Not Permitted",
+            "Triplex": "Not Permitted",
+            "Quadplex": "Not Permitted",
+            "Residential care home (5 or fewer residents)": "Permitted",
+            "Adult day care": "Permitted",
+            "Residential care facility (6 or more residents)": "Not Permitted",
+            "Family childcare home (16 or fewer children)": "Permitted",
+            "Multi-unit residential (more than 4 units)": "Not Permitted",
+            "Micro-units": "Not Permitted",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory uses and structures": "Permitted",
+            "Cottage housing development": "Not Permitted",
+            "Cottage cluster development": "Not Permitted"
+        },
+        "Public and Institutional": {
+            "Places of worship": "Conditional Use",
+            "Clubs, lodges, similar uses": "Conditional Use",
+            "Government offices and facilities (administration, public safety, utilities, and similar uses)": "Conditional Use",
+            "Libraries, museums, community centers, and similar uses": "Conditional Use",
+            "Utilities (above ground)": "Conditional Use",
+            "Neighborhood parks": "Permitted",
+            "Community parks": "Conditional Use",
+            "Regional parks": "Conditional Use",
+            "Recreational facilities (public)": "Conditional Use",
+            "Schools": "Conditional Use",
+            "Cemetery/mausoleum": "Conditional Use",
+            "Child care facility (17 or more children)": "Conditional Use",
+            "Hospital": "Conditional Use",
+            "Mobility hub": "Not Permitted"
+        },
+        "Neighborhood Commercial": {
+            "Child care facility (13 or more children)": "Not Permitted",
+            "Food and beverage services less than 2,000 square feet (with or without alcohol)": "Not Permitted",
+            "Laundromats and dry cleaners": "Not Permitted",
+            "Retail sales and services": "Not Permitted",
+            "Personal services (e.g., barber shops, salons, similar uses)": "Not Permitted",
+            "Repair services, conducted entirely within building; excluding vehicle repair, small engine repair and similar services": "Not Permitted",
+            "Offices and clinics": "Not Permitted",
+            "Mixed-use building": "Not Permitted"
+        },
+        "Miscellaneous Uses": {
+            "Bed and breakfast inn": "Conditional Use",
+            "Boarding kennel": "Conditional Use",
+            "Destination resorts": "Conditional Use",
+            "Diagnostic testing, counseling, administrative offices, meeting facilities for nonprofit and public community service programs for children and families": "Not Permitted",
+            "Farm use, agriculture": "Permitted",
+            "Office uses lawfully existing prior to the adoption date of the ordinance codified in this code": "Not Permitted",
+            "Plant nursery": {
+                "Existing": "Permitted",
+                "New (limited to 1 acre)": "Conditional Use",
+                "New (larger than 1 acre)": "Conditional Use"
+            },
+            "Shelters": "Permitted",
+            "Short-term rental": "Permitted",
+            "Small hydroelectric facility": "Permitted",
+            "Veterinary clinic": {
+                "Small animal (only)": "Not Permitted",
+                "Large animal": "Conditional Use"
+            },
+            "Wireless and broadcast communication facilities": "See BDC Chapter 3.7"
+        },
+        "Setbacks": {
+            "Front": "20 ft. Exception: On lots with multiple frontages, one frontage must have a 20 ft. setback, others may be 10 ft. if garage/carport access is set back 20 ft.",
+            "Rear": "20 ft.",
+            "Side": "10 ft."
+        }
+    }
+}
+  
