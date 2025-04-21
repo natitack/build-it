@@ -9,7 +9,7 @@ export default function HomePage() {
     <Box
       sx={{
         minHeight: '100vh',
-        backgroundColor: '#f7fdf5', // soft light green/white background
+        backgroundColor: '#f7fdf5',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -17,10 +17,10 @@ export default function HomePage() {
         padding: 4,
       }}
     >
-      {/* Top Logo Section */}
+      {/* Logo Section */}
       <Stack direction="row" spacing={4} alignItems="center" mb={6}>
         <Image
-          src="/logo-with-house.png" // Replace with your actual image path
+          src="/logo.png"
           alt="Build-It Inc. Logo"
           width={300}
           height={100}
@@ -29,19 +29,55 @@ export default function HomePage() {
 
       {/* Button Row */}
       <Stack direction="row" spacing={2} mb={10}>
-        <Button variant="contained" color="success" size="large">
+        <Button
+          variant="contained"
+          size="large"
+          sx={{
+            backgroundColor: '#4caf50', // green
+            color: '#fff',
+            textTransform: 'none',
+            boxShadow: 2,
+            '&:hover': {
+              backgroundColor: '#43a047',
+            },
+          }}
+        >
           Get Started
         </Button>
-        <Button variant="text" size="large">
+
+        <Button
+          variant="text"
+          size="large"
+          sx={{
+            color: '#000',
+            textTransform: 'none',
+            '&:hover': {
+              backgroundColor: 'transparent',
+              textDecoration: 'underline',
+            },
+          }}
+        >
           Log in
         </Button>
       </Stack>
 
       {/* Footer CTA */}
       <Typography variant="body1" gutterBottom>
-        Interested in partnering with us? We’d love to hear from you!
+        Interested in partnering with us? We'd love to hear from you!
       </Typography>
-      <Button variant="contained" color="success" size="medium">
+      <Button
+        variant="contained"
+        size="medium"
+        sx={{
+          backgroundColor: '#4caf50',
+          color: '#fff',
+          textTransform: 'none',
+          boxShadow: 2,
+          '&:hover': {
+            backgroundColor: '#43a047',
+          },
+        }}
+      >
         Contact Us
       </Button>
     </Box>
