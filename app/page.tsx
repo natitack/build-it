@@ -22,8 +22,8 @@ export default function HomePage() {
         <Image
           src="/logo.png"
           alt="Build-It Inc. Logo"
-          width={300}
-          height={100}
+          width={550}
+          height={250}
         />
       </Stack>
 
