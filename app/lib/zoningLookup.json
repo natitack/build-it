@@ -1,5 +1,6 @@
 {
     "RL": {
+        "Name": "Residential Low",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -75,6 +76,7 @@
         }
     },
     "RS": {
+        "Name": "Residential Single",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -150,6 +152,7 @@
         }
     },
     "RM-10": {
+        "Name": "Residential Multiple (High Density)",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -225,6 +228,7 @@
         }
     },
     "RM": {
+        "Name": "Residential Multiple",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -300,6 +304,7 @@
         }
     },
     "RH": {
+        "Name": "Residential High",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Not Permitted",
@@ -375,6 +380,7 @@
         }
     },
     "UAR": {
+        "Name": "Urban Area Reserve",
         "Residential": {
             "Single-room occupancy": "Not Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -447,6 +453,386 @@
             "Front": "20 ft. Exception: On lots with multiple frontages, one frontage must have a 20 ft. setback, others may be 10 ft. if garage/carport access is set back 20 ft.",
             "Rear": "20 ft.",
             "Side": "10 ft."
+        }
+    },
+    "CB": {
+        "Name": "Central Business",
+        "Residential": {
+            "Existing Residential Use": "Permitted",
+            "New residential use as part of a mixed-use development": "Permitted",
+            "Micro-units as part of a mixed-use development": "Permitted (See BDC 3.8.200)",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory dwelling units (ADU) on a lot or parcel that contains an existing, legally established single-unit dwelling": "Permitted",
+            "Income qualified housing": "See BDC 3.6.250"
+        },
+        "Commercial": {
+            "Retail Sales and Service (non-automobile dependent/oriented)": {
+                "building footprint less than 50,000 square feet": "Permitted",
+                "building footprint greater than 50,000 square feet": "Permitted"
+            },
+            "Retail Sales and Service (automobile dependent)": "Not Permitted",
+            "Retail Sales and Service (automobile oriented)": "Conditional Use",
+            "Restaurants/Food and Beverage Services": {
+                "with drive-through": "Conditional Use",
+                "without drive-through": "Permitted"
+            },
+            "Offices and Clinics": "Permitted",
+            "Production Office": "Not Permitted",
+            "Convention Center/Meeting Rooms": "Conditional Use",
+            "Lodging (e.g., hotels, motels, bed and breakfast inns, short-term rentals, hostels)": "Permitted",
+            "Hospitals": "Not Permitted",
+            "Commercial and Public Parking": "Permitted",
+            "Commercial Storage": {
+                "enclosed in building and on an upper story": "Conditional Use",
+                "not enclosed in building": "Not Permitted",
+                "enclosed in building on ground floor (i.e., mini-storage)": "Not Permitted"
+            },
+            "Entertainment and Recreation": {
+                "enclosed in building (e.g., theater, fitness facility)": "Permitted",
+                "not enclosed (e.g., amusement, outdoor arena)": "Not Permitted"
+            },
+            "Day Care": "Permitted",
+            "Redemption Center": "Not Permitted",
+            "Trailer Park/Campground": "Not Permitted",
+            "Mortuary": "Not Permitted",
+            "Wholesale Sales (more than 75 percent of sales are wholesale)": "Not Permitted",
+            "Veterinary Clinic (small animal)": "Conditional Use",
+            "Mixed-use (residential with commercial/civic/industrial)": "Permitted",
+            "Medical Marijuana Dispensary and Marijuana Retailer": {
+                "building footprint 50,000 square feet or less": "Permitted",
+                "building footprint greater than 50,000 square feet": "Permitted"
+            },
+            "Marijuana Wholesale (more than 75 percent of sales are wholesale)": "Not Permitted",
+            "Marijuana Testing, Research and Development Facilities": "Permitted"
+        },
+        "Public and Institutional": {
+            "Government – point of service intended to serve the entire City (e.g., City Hall, main library, main post office, main Department of Motor Vehicles service center)": "Permitted",
+            "Government – branch service intended to serve a portion of the City": "Permitted",
+            "Parks and Open Space": "Permitted",
+            "Schools": "Permitted",
+            "Institution of Higher Education": "Permitted",
+            "Clubs and Places of Worship": "Permitted",
+            "Utilities (above ground)": "Permitted",
+            "Mobility hub": "Permitted"
+        },
+        "Industrial": {
+            "Manufacturing and Production": {
+                "greater than 5,000 sq. ft.": "Not Permitted",
+                "less than 5,000 sq. ft. with retail outlet": "Permitted"
+            },
+            "Warehouse": "Not Permitted",
+            "Transportation, Freight and Distribution": "Not Permitted",
+            "Industrial Service (e.g., cleaning, repair)": "Not Permitted",
+            "Manufactured Home Sales": "Not Permitted",
+            "Lumber/Building Supplies": "Not Permitted",
+            "Hydroelectric Facilities": "Conditional Use",
+            "Marijuana Processing of Cannabinoid Concentrates and Cannabinoid Products Not Including Processing of Cannabinoid Extracts": {
+                "greater than 5,000 sq. ft.": "Not Permitted",
+                "5,000 sq. ft. or less with retail outlet": "Permitted"
+            }
+        },
+        "Miscellaneous Uses": {
+            "Shelters": "Permitted",
+            "Small Hydroelectric Facility": "Permitted",
+            "Wireless and Broadcast Communication Facilities": ""
+        },
+        "Development Standards": {
+            "Minimum Front Yard Setback": "None",
+            "Maximum Front Yard Setback": {
+                "From street with on-street parking": "10 feet",
+                "From street without on-street parking": "10 feet"
+            },
+            "Minimum Rear Yard Setbacks": "None",
+            "Minimum Side Yard Setbacks": "None",
+            "Maximum Lot Coverage": "None",
+            "Maximum Building Height": "35 to 70 feet. Subject to the provisions of BDC 2.2.800",
+            "Minimum Floor Area Ratio": "Floor Area Ratio of 2:1",
+            "Maximum Building Footprint": "None"
+        }
+    },
+    "CC": {
+        "Name": "Commercial Convenience",
+        "Residential": {
+            "Existing Residential Use": "Permitted",
+            "New residential use as part of a mixed-use development": "Permitted",
+            "Micro-units as part of a mixed-use development": "Permitted (See BDC 3.8.200)",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory dwelling units (ADU) on a lot or parcel that contains an existing, legally established single-unit dwelling": "Permitted",
+            "Income qualified housing": "See BDC 3.6.250"
+        },
+        "Commercial": {
+            "Retail Sales and Service (non-automobile dependent/oriented)": {
+                "building footprint less than 50,000 square feet": "Permitted",
+                "building footprint greater than 50,000 square feet": "Conditional Use"
+            },
+            "Retail Sales and Service (automobile dependent)": "Not Permitted",
+            "Retail Sales and Service (automobile oriented)": "Conditional Use",
+            "Restaurants/Food and Beverage Services": {
+                "with drive-through": "Conditional Use",
+                "without drive-through": "Permitted"
+            },
+            "Offices and Clinics": "Permitted",
+            "Production Office": "Not Permitted",
+            "Convention Center/Meeting Rooms": "Not Permitted",
+            "Lodging (e.g., hotels, motels, bed and breakfast inns, short-term rentals, hostels)": "Permitted",
+            "Hospitals": "Not Permitted",
+            "Commercial and Public Parking": "Permitted",
+            "Commercial Storage": {
+                "enclosed in building and on an upper story": "Permitted",
+                "not enclosed in building": "Not Permitted",
+                "enclosed in building on ground floor (i.e., mini-storage)": "Not Permitted"
+            },
+            "Entertainment and Recreation": {
+                "enclosed in building (e.g., theater, fitness facility)": "Permitted",
+                "not enclosed (e.g., amusement, outdoor arena)": "Not Permitted"
+            },
+            "Day Care": "Permitted",
+            "Redemption Center": "Not Permitted",
+            "Trailer Park/Campground": "Not Permitted",
+            "Mortuary": "Not Permitted",
+            "Wholesale Sales (more than 75 percent of sales are wholesale)": "Not Permitted",
+            "Veterinary Clinic (small animal)": "Permitted",
+            "Mixed-use (residential with commercial/civic/industrial)": "Permitted",
+            "Medical Marijuana Dispensary and Marijuana Retailer": {
+                "building footprint 50,000 square feet or less": "Permitted",
+                "building footprint greater than 50,000 square feet": "Conditional Use"
+            },
+            "Marijuana Wholesale (more than 75 percent of sales are wholesale)": "Not Permitted",
+            "Marijuana Testing, Research and Development Facilities": "Permitted"
+        },
+        "Public and Institutional": {
+            "Government – point of service intended to serve the entire City (e.g., City Hall, main library, main post office, main Department of Motor Vehicles service center)": "Not Permitted",
+            "Government – branch service intended to serve a portion of the City": "Permitted",
+            "Parks and Open Space": "Permitted",
+            "Schools": "Permitted",
+            "Institution of Higher Education": "Permitted",
+            "Clubs and Places of Worship": "Conditional Use",
+            "Utilities (above ground)": "Permitted",
+            "Mobility hub": "Permitted"
+        },
+        "Industrial": {
+            "Manufacturing and Production": {
+                "greater than 5,000 sq. ft.": "Not Permitted",
+                "less than 5,000 sq. ft. with retail outlet": "Permitted"
+            },
+            "Warehouse": "Not Permitted",
+            "Transportation, Freight and Distribution": "Not Permitted",
+            "Industrial Service (e.g., cleaning, repair)": "Not Permitted",
+            "Manufactured Home Sales": "Not Permitted",
+            "Lumber/Building Supplies": "Not Permitted",
+            "Hydroelectric Facilities": "Conditional Use",
+            "Marijuana Processing of Cannabinoid Concentrates and Cannabinoid Products Not Including Processing of Cannabinoid Extracts": {
+                "greater than 5,000 sq. ft.": "Not Permitted",
+                "5,000 sq. ft. or less with retail outlet": "Permitted"
+            }
+        },
+        "Miscellaneous Uses": {
+            "Shelters": "Permitted",
+            "Small Hydroelectric Facility": "Permitted",
+            "Wireless and Broadcast Communication Facilities": "See BDC Chapter 3.7"
+        },
+        "Development Standards": {
+            "Minimum Front Yard Setback": "None",
+            "Maximum Front Yard Setback": {
+                "From street with on-street parking": "10 feet",
+                "From street without on-street parking": "80 feet"
+            },
+            "Minimum Rear Yard Setbacks": "None",
+            "Minimum Side Yard Setbacks": "None",
+            "Maximum Lot Coverage": "None",
+            "Maximum Building Height": "35 feet, except within 100 feet of the Deschutes River where height may be further limited subject to WOZ Review",
+            "Minimum Floor Area Ratio": "None",
+            "Maximum Building Footprint": "50,000 sq. ft."
+        }
+    },
+    "CL": {
+        "Name": "Commercial Limited",
+        "Residential": {
+            "Existing Residential Use": "Permitted",
+            "New residential use as part of a mixed-use development": "Permitted",
+            "Micro-units as part of a mixed-use development": "Permitted (See BDC 3.8.200)",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory dwelling units (ADU) on a lot or parcel that contains an existing, legally established single-unit dwelling": "Permitted",
+            "Income qualified housing": "See BDC 3.6.250"
+        },
+        "Commercial": {
+            "Retail Sales and Service (non-automobile dependent/oriented)": {
+                "building footprint less than 50,000 square feet": "Permitted",
+                "building footprint greater than 50,000 square feet": "Permitted"
+            },
+            "Retail Sales and Service (automobile dependent)": "Permitted",
+            "Retail Sales and Service (automobile oriented)": "Permitted",
+            "Restaurants/Food and Beverage Services": {
+                "with drive-through": "Permitted",
+                "without drive-through": "Permitted"
+            },
+            "Offices and Clinics": "Permitted",
+            "Production Office": "Conditional Use",
+            "Convention Center/Meeting Rooms": "Permitted",
+            "Lodging (e.g., hotels, motels, bed and breakfast inns, short-term rentals, hostels)": "Permitted",
+            "Hospitals": "Permitted",
+            "Commercial and Public Parking": "Permitted",
+            "Commercial Storage": {
+                "enclosed in building and on an upper story": "Permitted",
+                "not enclosed in building": "Permitted",
+                "enclosed in building on ground floor (i.e., mini-storage)": "Conditional Use"
+            },
+            "Entertainment and Recreation": {
+                "enclosed in building (e.g., theater, fitness facility)": "Permitted",
+                "not enclosed (e.g., amusement, outdoor arena)": "Conditional Use"
+            },
+            "Day Care": "Permitted",
+            "Redemption Center": "Permitted",
+            "Trailer Park/Campground": "Conditional Use",
+            "Mortuary": "Permitted",
+            "Wholesale Sales (more than 75 percent of sales are wholesale)": "Permitted",
+            "Veterinary Clinic (small animal)": "Permitted",
+            "Mixed-use (residential with commercial/civic/industrial)": "Permitted",
+            "Medical Marijuana Dispensary and Marijuana Retailer": {
+                "building footprint 50,000 square feet or less": "Permitted",
+                "building footprint greater than 50,000 square feet": "Permitted"
+            },
+            "Marijuana Wholesale (more than 75 percent of sales are wholesale)": "Permitted",
+            "Marijuana Testing, Research and Development Facilities": "Permitted"
+        },
+        "Public and Institutional": {
+            "Government – point of service intended to serve the entire City (e.g., City Hall, main library, main post office, main Department of Motor Vehicles service center)": "Permitted",
+            "Government – branch service intended to serve a portion of the City": "Permitted",
+            "Parks and Open Space": "Permitted",
+            "Schools": "Permitted",
+            "Institution of Higher Education": "Permitted",
+            "Clubs and Places of Worship": "Permitted",
+            "Utilities (above ground)": "Permitted",
+            "Mobility hub": "Permitted"
+        },
+        "Industrial": {
+            "Manufacturing and Production": {
+                "greater than 5,000 sq. ft.": "Conditional Use",
+                "less than 5,000 sq. ft. with retail outlet": "Permitted"
+            },
+            "Warehouse": "Conditional Use",
+            "Transportation, Freight and Distribution": "Conditional Use",
+            "Industrial Service (e.g., cleaning, repair)": "Permitted",
+            "Manufactured Home Sales": "Permitted",
+            "Lumber/Building Supplies": "Conditional Use",
+            "Hydroelectric Facilities": "Conditional Use",
+            "Marijuana Processing of Cannabinoid Concentrates and Cannabinoid Products Not Including Processing of Cannabinoid Extracts": {
+                "greater than 5,000 sq. ft.": "Conditional Use",
+                "5,000 sq. ft. or less with retail outlet": "Permitted"
+            }
+        },
+        "Miscellaneous Uses": {
+            "Shelters": "Permitted",
+            "Small Hydroelectric Facility": "Permitted",
+            "Wireless and Broadcast Communication Facilities": ""
+        },
+        "Development Standards": {
+            "Minimum Front Yard Setback": "10 feet",
+            "Maximum Front Yard Setback": {
+                "From street with on-street parking": "10 feet",
+                "From street without on-street parking": "80 feet"
+            },
+            "Minimum Rear Yard Setbacks": "None",
+            "Minimum Side Yard Setbacks": "None",
+            "Maximum Lot Coverage": "None",
+            "Maximum Building Height": "55 feet, except within 100 feet of the Deschutes River where height may be further limited subject to WOZ Review",
+            "Minimum Floor Area Ratio": "None",
+            "Maximum Building Footprint": "None"
+        }
+    },
+    "CG": {
+        "Name": "Commercial General",
+        "Residential": {
+            "Existing Residential Use": "Permitted",
+            "New residential use as part of a mixed-use development": "Permitted",
+            "Micro-units as part of a mixed-use development": "Permitted (See BDC 3.8.200)",
+            "Home business (Class A/Class B/Class C)": "Permitted",
+            "Accessory dwelling units (ADU) on a lot or parcel that contains an existing, legally established single-unit dwelling": "Permitted",
+            "Income qualified housing": "See BDC 3.6.250"
+        },
+        "Commercial": {
+            "Retail Sales and Service (non-automobile dependent/oriented)": {
+                "building footprint less than 50,000 square feet": "Permitted",
+                "building footprint greater than 50,000 square feet": "Permitted"
+            },
+            "Retail Sales and Service (automobile dependent)": "Permitted",
+            "Retail Sales and Service (automobile oriented)": "Permitted",
+            "Restaurants/Food and Beverage Services": {
+                "with drive-through": "Permitted",
+                "without drive-through": "Permitted"
+            },
+            "Offices and Clinics": "Permitted",
+            "Production Office": "Permitted",
+            "Convention Center/Meeting Rooms": "Permitted",
+            "Lodging (e.g., hotels, motels, bed and breakfast inns, short-term rentals, hostels)": "Permitted",
+            "Hospitals": "Permitted",
+            "Commercial and Public Parking": "Permitted",
+            "Commercial Storage": {
+                "enclosed in building and on an upper story": "Permitted",
+                "not enclosed in building": "Permitted",
+                "enclosed in building on ground floor (i.e., mini-storage)": "Permitted"
+            },
+            "Entertainment and Recreation": {
+                "enclosed in building (e.g., theater, fitness facility)": "Permitted",
+                "not enclosed (e.g., amusement, outdoor arena)": "Permitted"
+            },
+            "Day Care": "Permitted",
+            "Redemption Center": "Permitted",
+            "Trailer Park/Campground": "Permitted",
+            "Mortuary": "Permitted",
+            "Wholesale Sales (more than 75 percent of sales are wholesale)": "Permitted",
+            "Veterinary Clinic (small animal)": "Permitted",
+            "Mixed-use (residential with commercial/civic/industrial)": "Permitted",
+            "Medical Marijuana Dispensary and Marijuana Retailer": {
+                "building footprint 50,000 square feet or less": "Permitted",
+                "building footprint greater than 50,000 square feet": "Permitted"
+            },
+            "Marijuana Wholesale (more than 75 percent of sales are wholesale)": "Permitted",
+            "Marijuana Testing, Research and Development Facilities": "Permitted"
+        },
+        "Public and Institutional": {
+            "Government – point of service intended to serve the entire City (e.g., City Hall, main library, main post office, main Department of Motor Vehicles service center)": "Permitted",
+            "Government – branch service intended to serve a portion of the City": "Permitted",
+            "Parks and Open Space": "Permitted",
+            "Schools": "Permitted",
+            "Institution of Higher Education": "Permitted",
+            "Clubs and Places of Worship": "Permitted",
+            "Utilities (above ground)": "Permitted",
+            "Mobility hub": "Permitted"
+        },
+        "Industrial": {
+            "Manufacturing and Production": {
+                "greater than 5,000 sq. ft.": "Permitted",
+                "less than 5,000 sq. ft. with retail outlet": "Permitted"
+            },
+            "Warehouse": "Permitted",
+            "Transportation, Freight and Distribution": "Permitted",
+            "Industrial Service (e.g., cleaning, repair)": "Permitted",
+            "Manufactured Home Sales": "Permitted",
+            "Lumber/Building Supplies": "Permitted",
+            "Hydroelectric Facilities": "Conditional Use",
+            "Marijuana Processing of Cannabinoid Concentrates and Cannabinoid Products Not Including Processing of Cannabinoid Extracts": {
+                "greater than 5,000 sq. ft.": "Permitted",
+                "5,000 sq. ft. or less with retail outlet": "Permitted"
+            }
+        },
+        "Miscellaneous Uses": {
+            "Shelters": "Permitted",
+            "Small Hydroelectric Facility": "Permitted",
+            "Wireless and Broadcast Communication Facilities": ""
+        },
+        "Development Standards": {
+            "Minimum Front Yard Setback": "10 feet",
+            "Maximum Front Yard Setback": {
+                "From street with on-street parking": "10 feet",
+                "From street without on-street parking": "80 feet"
+            },
+            "Minimum Rear Yard Setbacks": "None",
+            "Minimum Side Yard Setbacks": "None",
+            "Maximum Lot Coverage": "None",
+            "Maximum Building Height": "55 feet, except within 100 feet of the Deschutes River where height may be further limited subject to WOZ Review",
+            "Minimum Floor Area Ratio": "None",
+            "Maximum Building Footprint": "None"
         }
     }
 }
