@@ -1,6 +1,6 @@
 {
     "RL": {
-        "Name": "Residential Low",
+        "Name": "Residential Low Density",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -76,7 +76,7 @@
         }
     },
     "RS": {
-        "Name": "Residential Single",
+        "Name": "Residential Standard Density",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -152,7 +152,7 @@
         }
     },
     "RM-10": {
-        "Name": "Residential Multiple (High Density)",
+        "Name": "Residential Multiple Family - 10 Units or Less",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -228,7 +228,7 @@
         }
     },
     "RM": {
-        "Name": "Residential Multiple",
+        "Name": "Residential Multiple Family",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Permitted",
@@ -304,7 +304,7 @@
         }
     },
     "RH": {
-        "Name": "Residential High",
+        "Name": "Residential High Density",
         "Residential": {
             "Single-room occupancy": "Permitted",
             "Single-unit detached dwelling": "Not Permitted",
