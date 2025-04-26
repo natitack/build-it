@@ -1,0 +1,215 @@
+openapi: 3.0.0
+info:
+  version: '1'
+  title: buildit
+  description: REST API spec for Build-it
+servers:
+- url: "https://build-it-lake.vercel.app/"
+paths:
+  /api/test-zoning:
+    post:
+      summary: Test zoning information
+      description: Retrieve zoning information for a given address.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  description: The address to test zoning for
+      responses:
+        '200':
+          description: Zoning information for the given address
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  address:
+                    type: string
+                  coordinates:
+                    type: object
+                    properties:
+                      lat:
+                        type: number
+                      lon:
+                        type: number
+                  zoningCode:
+                    type: string
+                  zoningInfo:
+                    type: object
+        '400':
+          description: Invalid address
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/list-objects:
+    get:
+      summary: List objects in S3 bucket
+      description: Retrieve a list of objects stored in the configured S3 bucket.
+      responses:
+        '200':
+          description: List of objects in the S3 bucket
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  objects:
+                    type: array
+                    items:
+                      type: object
+        '500':
+          description: Error communicating with AWS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/database:
+    get:
+      summary: List database entries
+      description: Retrieve all entries from the DynamoDB table.
+      responses:
+        '200':
+          description: List of database entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DynamoEntry'
+        '500':
+          description: Error retrieving database entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+    post:
+      summary: Add a new database entry
+      description: Add a new entry to the DynamoDB table.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DynamoEntry'
+      responses:
+        '200':
+          description: Successfully added entry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DynamoEntry'
+        '500':
+          description: Error adding entry
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/database/{id}:
+    delete:
+      summary: Delete a database entry
+      description: Delete an entry from the DynamoDB table by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the entry to delete
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully deleted entry
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '500':
+          description: Error deleting entry
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/upload-object:
+    post:
+      summary: Generate presigned URL for object upload
+      description: Generate a presigned URL for uploading objects to an S3 bucket.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fileName:
+                  type: string
+                  description: The name of the file to upload
+                contentType:
+                  type: string
+                  description: The MIME type of the file
+      responses:
+        '200':
+          description: Presigned URL for uploading the object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    description: The presigned URL
+        '500':
+          description: Error generating presigned URL
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+components:
+  schemas:
+    DynamoEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the entry
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      additionalProperties:
+        description: Additional fields
