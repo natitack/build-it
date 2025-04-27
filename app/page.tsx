@@ -1,10 +1,60 @@
 'use client';
 
-import { Box, Button, Typography, Stack } from '@mui/material';
+import { Box, Button, Typography, Stack, ButtonProps } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
+// Shared styles
+const primaryButtonStyles = {
+  backgroundColor: '#4caf50',
+  color: '#fff',
+  textTransform: 'none',
+  boxShadow: 2,
+  '&:hover': {
+    backgroundColor: '#43a047',
+  },
+};
+
+const textButtonStyles = {
+  color: '#000',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: 'transparent',
+    textDecoration: 'underline',
+  },
+};
+
+// Reusable Button Components
+function PrimaryButton(props: ButtonProps) {
+  return (
+    <Button
+      variant="contained"
+      size="large"
+      sx={primaryButtonStyles}
+      {...props}
+    />
+  );
+}
+
+function TextButton(props: ButtonProps) {
+  return (
+    <Button
+      variant="text"
+      size="large"
+      sx={textButtonStyles}
+      {...props}
+    />
+  );
+}
+
 export default function HomePage() {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push('/questionnaire');
+  };
+
   return (
     <Box
       sx={{
@@ -22,64 +72,30 @@ export default function HomePage() {
         <Image
           src="/logo.png"
           alt="Build-It Inc. Logo"
-          width={550}
+          width={600}
           height={250}
         />
       </Stack>
 
       {/* Button Row */}
       <Stack direction="row" spacing={2} mb={10}>
-        <Button
-          variant="contained"
-          size="large"
-          sx={{
-            backgroundColor: '#4caf50', // green
-            color: '#fff',
-            textTransform: 'none',
-            boxShadow: 2,
-            '&:hover': {
-              backgroundColor: '#43a047',
-            },
-          }}
-        >
+        <PrimaryButton onClick={handleGetStarted}>
           Get Started
-        </Button>
+        </PrimaryButton>
 
-        <Button
-          variant="text"
-          size="large"
-          sx={{
-            color: '#000',
-            textTransform: 'none',
-            '&:hover': {
-              backgroundColor: 'transparent',
-              textDecoration: 'underline',
-            },
-          }}
-        >
+        <TextButton>
           Log in
-        </Button>
+        </TextButton>
       </Stack>
 
       {/* Footer CTA */}
       <Typography variant="body1" gutterBottom>
         Interested in partnering with us? We'd love to hear from you!
       </Typography>
-      <Button
-        variant="contained"
-        size="medium"
-        sx={{
-          backgroundColor: '#4caf50',
-          color: '#fff',
-          textTransform: 'none',
-          boxShadow: 2,
-          '&:hover': {
-            backgroundColor: '#43a047',
-          },
-        }}
-      >
+
+      <PrimaryButton size="medium">
         Contact Us
-      </Button>
+      </PrimaryButton>
     </Box>
   );
 }
