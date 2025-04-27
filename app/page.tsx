@@ -94,7 +94,7 @@ export default function HomePage() {
 
       {/* Footer CTA */}
       <Typography variant="body1" gutterBottom>
-        Interested in partnering with us? We'd love to hear from you!
+        {"Interested in partnering with us? We'd love to hear from you!"}
       </Typography>
 
       <PrimaryButton size="medium">
