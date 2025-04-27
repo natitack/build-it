@@ -55,6 +55,10 @@ export default function HomePage() {
     router.push('/questionnaire');
   };
 
+  const handleLogIn = () => {
+    router.push('/log-in');
+  };
+
   return (
     <Box
       sx={{
@@ -83,7 +87,7 @@ export default function HomePage() {
           Get Started
         </PrimaryButton>
 
-        <TextButton>
+        <TextButton onClick={handleLogIn}>
           Log in
         </TextButton>
       </Stack>
