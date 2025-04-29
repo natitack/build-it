@@ -31,13 +31,12 @@ export default function QuestionnairePage() {
   };
 
   const addressInput = (
-    <label className="flex flex-col">
-      <span className="mb-1 font-medium">Your Street Address</span>
+    <label>
+      <span >Your Street Address</span>
       <input
         type="text"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
-        className="border border-gray-300 rounded p-2"
         placeholder="123 Main St"
         required
       />
@@ -45,12 +44,11 @@ export default function QuestionnairePage() {
   );
 
   const sewerInput = (
-    <label className="flex flex-col">
-      <span className="mb-1 font-medium">Are you connected to sewer?</span>
+    <label >
+      <span>Are you connected to sewer?</span>
       <select
         value={sewerConnected}
         onChange={(e) => setSewerConnected(e.target.value)}
-        className="border border-gray-300 rounded p-2"
         required
       >
         <option value="" disabled>Select one</option>
@@ -61,12 +59,11 @@ export default function QuestionnairePage() {
   );
 
   const hoaInput = (
-    <label className="flex flex-col">
-      <span className="mb-1 font-medium">Do you have an HOA?</span>
+    <label>
+      <span >Do you have an HOA?</span>
       <select
         value={hoa}
         onChange={(e) => setHoa(e.target.value)}
-        className="border border-gray-300 rounded p-2"
         required
       >
         <option value="" disabled>Select one</option>
@@ -77,24 +74,24 @@ export default function QuestionnairePage() {
   );
 
   return (
-    <main className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Property Questionnaire</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <main >
+      <h1 >Property Questionnaire</h1>
+      <form onSubmit={handleSubmit} >
         <div>{addressInput}</div>
         {/* <div>{sewerInput}</div>
         <div>{hoaInput}</div> */}
         <button
           type="submit"
-          className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
+        
         >
           Submit
         </button>
       </form>
       {
         zoningResult && (
-          <div className="mt-6 p-4 border rounded bg-gray-50">
-            <h2 className="text-lg font-semibold mb-2">Zoning Information</h2>
-            <pre className="overflow-x-auto whitespace-pre-wrap">
+          <div >
+            <h2 >Zoning Information</h2>
+            <pre >
               {JSON.stringify(zoningResult, null, 2)}
             </pre>
           </div>
