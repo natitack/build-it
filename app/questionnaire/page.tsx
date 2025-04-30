@@ -90,7 +90,7 @@ export default function QuestionnairePage() {
       </form>
       {
         zoningResult && (
-          <div >
+          <div style={{padding: '30px'}}>
             <h2 >Zoning Information</h2>
             <ZoningTable zoningData={JSON.stringify(zoningResult, null, 2)} />
           </div>

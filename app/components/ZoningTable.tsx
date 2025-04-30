@@ -3,6 +3,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Box,
   Table,
   TableBody,
   TableCell,
@@ -19,7 +20,7 @@ export function ZoningTable(props: {zoningData: string}) {
     const { Name, ...categories } = zoningInfo;
   
     return (
-      <div>
+      <div style={{ padding: '1rem', maxWidth: '1500px', margin: '0 auto', marginBottom: 100 }}>
         <Typography variant="h5" gutterBottom>Address Information</Typography>
         {renderTable({
           Address: address,
@@ -27,13 +28,15 @@ export function ZoningTable(props: {zoningData: string}) {
           Longitude: coordinates.lon,
           'Zoning Code': zoningCode,
           'Zoning Name': Name
-        })}
+        }, ["Detail", "Value"])}
+
+        <Box height={35}></Box>
   
         <Typography variant="h5" gutterBottom>Zoning Details</Typography>
         {Object.entries(categories).map(([category, uses]) => (
-          <Accordion key={category} defaultExpanded>
+          <Accordion key={category} disableGutters sx={{ mb: 1, '& .MuiAccordionSummary-content': { margin: 0 }, '& .MuiAccordionDetails-root': { paddingTop: 0.25, paddingBottom: 0.25 } }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">{category}</Typography>
+              <Typography variant="subtitle1" fontWeight="bold">{category}</Typography>
             </AccordionSummary>
             <AccordionDetails>
               {renderTable(uses)}
@@ -45,14 +48,14 @@ export function ZoningTable(props: {zoningData: string}) {
   };
   export default ZoningTable;
 
-  const renderTable = (data: any) => {
+  const renderTable = (data: any, columnLabels=["Use", "Status"]) => {
     return (
-      <TableContainer component={Paper} sx={{ marginY: 2 }}>
+      <TableContainer component={Paper} sx={{ marginY: 1 }}>
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell><strong>Use</strong></TableCell>
-              <TableCell><strong>Status</strong></TableCell>
+              <TableCell sx={{ color: "white" }}><strong>{columnLabels[0]}</strong></TableCell>
+              <TableCell sx={{ color: "white" }}><strong>{columnLabels[1]}</strong></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
