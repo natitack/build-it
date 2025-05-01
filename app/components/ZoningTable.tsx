@@ -33,20 +33,39 @@ export function ZoningTable(props: {zoningData: string}) {
         <Box height={35}></Box>
   
         <Typography variant="h5" gutterBottom>Zoning Details</Typography>
-        {Object.entries(categories).map(([category, uses]) => (
-          <Accordion key={category} disableGutters sx={{ mb: 1, '& .MuiAccordionSummary-content': { margin: 0 }, '& .MuiAccordionDetails-root': { paddingTop: 0.25, paddingBottom: 0.25 } }}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" fontWeight="bold">{category.toLocaleLowerCase() == "residential" ? Name : category}</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              {renderTable(uses)}
-            </AccordionDetails>
-          </Accordion>
-        ))}
+        {
+          Object.keys(categories).length === 0
+          ? emptyDetails()
+          : zoningDetails(categories, Name)
+        }
       </div>
     );
   };
   export default ZoningTable;
+
+  const zoningDetails = (categories: any, Name: string) => {
+    return (
+      <div>{Object.entries(categories).map(([category, uses]) => (
+        <Accordion key={category} disableGutters sx={{ mb: 1, '& .MuiAccordionSummary-content': { margin: 0 }, '& .MuiAccordionDetails-root': { paddingTop: 0.25, paddingBottom: 0.25 } }}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="subtitle1" fontWeight="bold">{category.toLocaleLowerCase() == "residential" ? Name : category}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {renderTable(uses)}
+          </AccordionDetails>
+        </Accordion>
+      ))}
+      </div>
+    );
+  }
+
+  const emptyDetails = () => {
+    return (
+      <div>
+        No zoning details avaliable.
+      </div>
+    );
+  }
 
   const renderTable = (data: any, columnLabels=["Use", "Status"]) => {
     return (
@@ -68,12 +87,14 @@ export function ZoningTable(props: {zoningData: string}) {
                   </TableRow>
                 ));
               }
-              return (
-                <TableRow key={key}>
-                  <TableCell>{key}</TableCell>
-                  <TableCell>{value.toString()}</TableCell>
-                </TableRow>
-              );
+              if (value) {
+                return (
+                  <TableRow key={key}>
+                    <TableCell>{key}</TableCell>
+                    <TableCell>{value.toString()}</TableCell>
+                  </TableRow>
+                );
+              }
             })}
           </TableBody>
         </Table>
