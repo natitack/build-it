@@ -36,7 +36,7 @@ export function ZoningTable(props: {zoningData: string}) {
         {Object.entries(categories).map(([category, uses]) => (
           <Accordion key={category} disableGutters sx={{ mb: 1, '& .MuiAccordionSummary-content': { margin: 0 }, '& .MuiAccordionDetails-root': { paddingTop: 0.25, paddingBottom: 0.25 } }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" fontWeight="bold">{category}</Typography>
+              <Typography variant="subtitle1" fontWeight="bold">{category.toLocaleLowerCase() == "residential" ? Name : category}</Typography>
             </AccordionSummary>
             <AccordionDetails>
               {renderTable(uses)}
