@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import ZoningTable from '../components/ZoningTable';
 
 export default function QuestionnairePage() {
   const [address, setAddress] = useState('');
@@ -89,11 +90,9 @@ export default function QuestionnairePage() {
       </form>
       {
         zoningResult && (
-          <div >
+          <div style={{padding: '30px'}}>
             <h2 >Zoning Information</h2>
-            <pre >
-              {JSON.stringify(zoningResult, null, 2)}
-            </pre>
+            <ZoningTable zoningData={JSON.stringify(zoningResult, null, 2)} />
           </div>
         )
       }
