@@ -3,17 +3,20 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ZoningTable from '../components/ZoningTable';
+import { Box, CircularProgress } from '@mui/material';
 
 export default function QuestionnairePage() {
   const [address, setAddress] = useState('');
   const [sewerConnected, setSewerConnected] = useState('');
   const [hoa, setHoa] = useState('');
   const [zoningResult, setZoningResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await fetch('/api/test-zoning', {
         method: 'POST',
@@ -28,6 +31,8 @@ export default function QuestionnairePage() {
       // router.push('/new-report');
     } catch (e: any) {
       alert('Error: ' + e.message)
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,27 +80,41 @@ export default function QuestionnairePage() {
   );
 
   return (
-    <main >
-      <h1 >Property Questionnaire</h1>
-      <form onSubmit={handleSubmit} >
-        <div>{addressInput}</div>
-        {/* <div>{sewerInput}</div>
-        <div>{hoaInput}</div> */}
-        <button
-          type="submit"
-        
-        >
-          Submit
-        </button>
-      </form>
-      {
-        zoningResult && (
-          <div style={{padding: '30px'}}>
-            <h2 >Zoning Information</h2>
-            <ZoningTable zoningData={JSON.stringify(zoningResult, null, 2)} />
-          </div>
-        )
-      }
+    <main>
+      <h1>Property Questionnaire</h1>
+      <Box position="relative">
+        <form onSubmit={handleSubmit}>
+          <div>{addressInput}</div>
+          {/* <div>{sewerInput}</div>
+          <div>{hoaInput}</div> */}
+          <button type="submit">
+            Submit
+          </button>
+        </form>
+  
+        {loading && (
+          <Box
+            position="absolute"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', zIndex: 1 }}
+          >
+            <CircularProgress />
+          </Box>
+        )}
+      </Box>
+  
+      {zoningResult && (
+        <div style={{ padding: '30px' }}>
+          <h2>Zoning Information</h2>
+          <ZoningTable zoningData={JSON.stringify(zoningResult, null, 2)} />
+        </div>
+      )}
     </main>
   );
 }
