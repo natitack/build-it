@@ -6,7 +6,7 @@ info:
 servers:
 - url: "https://build-it-lake.vercel.app/"
 paths:
-  /api/test-zoning:
+  /api/zoning:
     post:
       summary: Test zoning information
       description: Retrieve zoning information for a given address.
