@@ -4,49 +4,7 @@ import { Box, Button, Typography, Stack, ButtonProps } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { BuiltItLogo } from './components/BuiltItLogo';
-
-// Shared styles
-const primaryButtonStyles = {
-  backgroundColor: '#4caf50',
-  color: '#fff',
-  textTransform: 'none',
-  boxShadow: 2,
-  '&:hover': {
-    backgroundColor: '#43a047',
-  },
-};
-
-const textButtonStyles = {
-  color: '#000',
-  textTransform: 'none',
-  '&:hover': {
-    backgroundColor: 'transparent',
-    textDecoration: 'underline',
-  },
-};
-
-// Reusable Button Components
-function PrimaryButton(props: ButtonProps) {
-  return (
-    <Button
-      variant="contained"
-      size="large"
-      sx={primaryButtonStyles}
-      {...props}
-    />
-  );
-}
-
-function TextButton(props: ButtonProps) {
-  return (
-    <Button
-      variant="text"
-      size="large"
-      sx={textButtonStyles}
-      {...props}
-    />
-  );
-}
+import { PrimaryButton, TextButton } from './components/Buttons';
 
 export default function HomePage() {
   const router = useRouter();
