@@ -1,9 +1,9 @@
 'use client';
 
 import { Box, Button, Typography, Stack, ButtonProps } from '@mui/material';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { BuiltItLogo } from './components/BuiltItLogo';
 
 // Shared styles
 const primaryButtonStyles = {
@@ -73,12 +73,7 @@ export default function HomePage() {
     >
       {/* Logo Section */}
       <Stack direction="row" spacing={4} alignItems="center" mb={6}>
-        <Image
-          src="/logo.png"
-          alt="Build-It Inc. Logo"
-          width={600}
-          height={250}
-        />
+        <BuiltItLogo width={600} height={250} />
       </Stack>
 
       {/* Button Row */}
