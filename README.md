@@ -1,7 +1,6 @@
 At Build-It Bend, we help homeowners transform their properties into valuable housing solutions. Oregon's housing crisis has created unique opportunities for property owners, with housing costs in Bend rising 50% in the last 5 years due to supply shortages. Recent changes to Oregon's housing regulations now allow more types of housing in more areas. Properties with single-family homes can now be developed into duplexes, triplexes, or accessory dwelling units (ADUs), offering up to 30% ROI for savvy property owners.
 
-**Despite these opportunities, most homeowners face significant barriers:
-**
+**Despite these opportunities, most homeowners face significant barriers:**
 - Limited awareness of new zoning possibilities
 - Complex and difficult-to-navigate development codes
 - Lack of expertise in financing, designing, and permitting
