@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import ZoningTable from '../components/ZoningTable';
 import { Box, CircularProgress, Stack, TextField, Typography } from '@mui/material';
 import Nav from '../components/Nav';
@@ -35,19 +34,6 @@ export default function QuestionnairePage() {
       setLoading(false);
     }
   };
-
-  const addressInput = (
-    <label>
-      <span >Your Street Address</span>
-      <input
-        type="text"
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-        placeholder="123 Main St"
-        required
-      />
-    </label>
-  );
 
   const sewerInput = (
     <label >
@@ -109,16 +95,6 @@ export default function QuestionnairePage() {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="123 Main St"
-              // error={address === ''} // Show error when address is empty
-              // helperText={address === '' ? 'This field is required' : ''} // Optional helper text
-              // slotProps={{
-              //   inputLabel: {
-              //     shrink: true,  // Ensure label floats when clicked
-              //     sx: {
-              //       transform: 'translateY(-24px)', // Adjust this value to lift the label
-              //     },
-              //   },
-              // }}
             />
 
             <PrimaryButton type="submit" fullWidth disabled={loading}>
