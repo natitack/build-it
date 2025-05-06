@@ -46,8 +46,12 @@ export function ZoningTable(props: {zoningData: string}) {
   const zoningDetails = (categories: any, Name: string) => {
     return (
       <div>{Object.entries(categories).map(([category, uses]) => (
-        <Accordion key={category} disableGutters sx={{ mb: 1, '& .MuiAccordionSummary-content': { margin: 0 }, '& .MuiAccordionDetails-root': { paddingTop: 0.25, paddingBottom: 0.25 } }}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Accordion key={category} disableGutters sx={{ 
+            mb: 1,
+            '& .MuiAccordionSummary-content': { margin: 0 }, 
+            '& .MuiAccordionDetails-root': { paddingTop: 0.25, paddingBottom: 0.25 },
+          }}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{'&:hover': { backgroundColor: '#4caf50' }, }}>
             <Typography variant="subtitle1" fontWeight="bold">{category.toLocaleLowerCase() == "residential" ? Name : category}</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -73,8 +77,8 @@ export function ZoningTable(props: {zoningData: string}) {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ color: "white" }}><strong>{columnLabels[0]}</strong></TableCell>
-              <TableCell sx={{ color: "white" }}><strong>{columnLabels[1]}</strong></TableCell>
+              <TableCell sx={{ backgroundColor: '#4caf50', color: "white" }}><strong>{columnLabels[0]}</strong></TableCell>
+              <TableCell sx={{ backgroundColor: '#4caf50', color: "white" }}><strong>{columnLabels[1]}</strong></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
