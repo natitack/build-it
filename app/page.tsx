@@ -1,52 +1,10 @@
 'use client';
 
 import { Box, Button, Typography, Stack, ButtonProps } from '@mui/material';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-
-// Shared styles
-const primaryButtonStyles = {
-  backgroundColor: '#4caf50',
-  color: '#fff',
-  textTransform: 'none',
-  boxShadow: 2,
-  '&:hover': {
-    backgroundColor: '#43a047',
-  },
-};
-
-const textButtonStyles = {
-  color: '#000',
-  textTransform: 'none',
-  '&:hover': {
-    backgroundColor: 'transparent',
-    textDecoration: 'underline',
-  },
-};
-
-// Reusable Button Components
-function PrimaryButton(props: ButtonProps) {
-  return (
-    <Button
-      variant="contained"
-      size="large"
-      sx={primaryButtonStyles}
-      {...props}
-    />
-  );
-}
-
-function TextButton(props: ButtonProps) {
-  return (
-    <Button
-      variant="text"
-      size="large"
-      sx={textButtonStyles}
-      {...props}
-    />
-  );
-}
+import { BuiltItLogo } from './components/BuiltItLogo';
+import { PrimaryButton, TextButton } from './components/Buttons';
 
 export default function HomePage() {
   const router = useRouter();
@@ -73,12 +31,7 @@ export default function HomePage() {
     >
       {/* Logo Section */}
       <Stack direction="row" spacing={4} alignItems="center" mb={6}>
-        <Image
-          src="/logo.png"
-          alt="Build-It Inc. Logo"
-          width={600}
-          height={250}
-        />
+        <BuiltItLogo width={600} height={250} />
       </Stack>
 
       {/* Button Row */}

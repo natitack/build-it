@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import ZoningTable from '../components/ZoningTable';
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress, Stack, TextField, Typography } from '@mui/material';
+import Nav from '../components/Nav';
+import { PrimaryButton } from '../components/Buttons';
 
 export default function QuestionnairePage() {
   const [address, setAddress] = useState('');
@@ -11,8 +12,6 @@ export default function QuestionnairePage() {
   const [hoa, setHoa] = useState('');
   const [zoningResult, setZoningResult] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,19 +34,6 @@ export default function QuestionnairePage() {
       setLoading(false);
     }
   };
-
-  const addressInput = (
-    <label>
-      <span >Your Street Address</span>
-      <input
-        type="text"
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-        placeholder="123 Main St"
-        required
-      />
-    </label>
-  );
 
   const sewerInput = (
     <label >
@@ -80,18 +66,44 @@ export default function QuestionnairePage() {
   );
 
   return (
-    <main>
-      <h1>Property Questionnaire</h1>
-      <Box position="relative">
+    <Box sx={{ backgroundColor: '#f7fdf5', minHeight: '100vh' }}>
+      <Nav />
+
+      <Box
+        sx={{
+          maxWidth: 600,
+          mx: 'auto',
+          pt: 8,
+          px: 2,
+          position: 'relative',
+        }}
+      >
+
+        {/* Form */}
         <form onSubmit={handleSubmit}>
-          <div>{addressInput}</div>
-          {/* <div>{sewerInput}</div>
-          <div>{hoaInput}</div> */}
-          <button type="submit">
-            Submit
-          </button>
+          <Stack spacing={5}>
+            <Typography variant="h5" fontWeight="bold" textAlign="center">
+              Enter your address below to find your zoning information!
+            </Typography>
+
+            <TextField
+              label="Your Street Address"
+              variant="outlined"
+              fullWidth
+              // size="small"
+              required
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="123 Main St"
+            />
+
+            <PrimaryButton type="submit" fullWidth disabled={loading}>
+              {loading ? 'Submitting...' : 'Submit'}
+            </PrimaryButton>
+          </Stack>
         </form>
-  
+
+        {/* Loading Overlay */}
         {loading && (
           <Box
             position="absolute"
@@ -102,19 +114,22 @@ export default function QuestionnairePage() {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', zIndex: 1 }}
+            sx={{ backgroundColor: 'rgba(255, 255, 255, 0.6)', zIndex: 1 }}
           >
             <CircularProgress />
           </Box>
         )}
       </Box>
-  
+
+      {/* Zoning Result */}
       {zoningResult && (
-        <div style={{ padding: '30px' }}>
-          <h2>Zoning Information</h2>
+        <Box maxWidth="md" mx="auto" py={6} px={2}>
+          <Typography variant="h6" gutterBottom>
+            Zoning Information
+          </Typography>
           <ZoningTable zoningData={JSON.stringify(zoningResult, null, 2)} />
-        </div>
+        </Box>
       )}
-    </main>
+    </Box>
   );
 }
