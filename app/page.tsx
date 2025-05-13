@@ -14,7 +14,6 @@ export default function HomePage() {
   };
 
   const handleLogIn = () => {
-    // router.push('/log-in');
     router.push('/auth/login');
   };
 
@@ -41,10 +40,9 @@ export default function HomePage() {
           Get Started
         </PrimaryButton>
 
-        {/* <TextButton onClick={handleLogIn}>
+        <TextButton onClick={handleLogIn}>
           Log in
-        </TextButton> */}
-        <a href="/auth/login">Login</a>
+        </TextButton>
       </Stack>
 
       {/* Footer CTA */}
