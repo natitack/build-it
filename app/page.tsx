@@ -10,11 +10,7 @@ export default function HomePage() {
   const router = useRouter();
 
   const handleGetStarted = () => {
-    router.push('/questionnaire');
-  };
-
-  const handleLogIn = () => {
-    router.push('/log-in');
+    router.push('/auth/login?returnTo=/questionnaire');
   };
 
   return (
@@ -39,10 +35,6 @@ export default function HomePage() {
         <PrimaryButton onClick={handleGetStarted}>
           Get Started
         </PrimaryButton>
-
-        <TextButton onClick={handleLogIn}>
-          Log in
-        </TextButton>
       </Stack>
 
       {/* Footer CTA */}
