@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getZoningData } from "../../lib/zoningService";
 import { auth0 } from "@/lib/auth0";
+import { docClient } from "@/app/lib/dynamodb";
+import { PutCommand } from "@aws-sdk/lib-dynamodb";
 
 export async function POST(request: Request) {
     try {
@@ -13,7 +15,23 @@ export async function POST(request: Request) {
         // Test user auth
         const { user } = await auth0.getSession(); 
         console.log(user.sub);
+        const userId = user.sub;
 
+        const timestamp = Math.floor(Date.now() / 1000);
+
+        await docClient.send(
+            new PutCommand({
+                TableName: process.env.AWS_DATABASE_TABLE,
+                Item: {
+                    userId,
+                    timestamp,
+                    address: result.address,
+                    zoningCode: result.zoningCode,
+                    coordinates: result.coordinates,
+                    zoningInfo: result.zoningInfo
+                }
+            })
+        )
 
         return NextResponse.json(result);
     } catch (e: any) {
