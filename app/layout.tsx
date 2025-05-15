@@ -1,5 +1,6 @@
 import './globals.css'
 import Nav from './components/Nav'
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: 'Next.js',
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
+        <Analytics />
       </body>
     </html>
   )
