@@ -1,5 +1,5 @@
 // app/components/Nav.tsx
-import { AppBar, Box, Button, Toolbar } from '@mui/material';
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 import { BuiltItLogo } from './BuiltItLogo';
 
@@ -25,6 +25,22 @@ export default function Nav() {
           </Link>
         </Box>
         
+        <Box sx={{flexGrow: 15}}>
+          <Link href="/dashboard" style={{color: "black", textDecoration: 'none'}}>
+            <Typography
+                variant="h6"
+                noWrap
+                sx={{
+                mr: 2,
+                fontWeight: 400,
+                
+                }}
+            >
+                Dashboard
+            </Typography>
+        </Link>
+        </Box>
+
         <Box>
           <Button
             variant="outlined"
