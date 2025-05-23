@@ -1,3 +1,4 @@
+import ZoningTable from '@/app/components/ZoningTable';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -11,20 +12,13 @@ export default function ItemPage() {
         fetch(`/api/zoning/history/${timestamp}`)
             .then((r) => r.json())
             .then((d) => {
-            const formatted = d.map((item: any) => {
-                const date = new Date(item.timestamp * 1000); // Convert to milliseconds
-                return {
-                ...item,
-                formattedDate: `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
-                };
-            });
-            setData(formatted);
+            setData(d);
         });
     }, []);
 
   return (
     <div>
-        Hi
+        {data ? <ZoningTable zoningData={data} /> : <div>Loading</div>}
     </div>
   );
 }
