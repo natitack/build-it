@@ -23,11 +23,6 @@ export default function Dashboard() {
         });
     }, []);
 
-
-    useEffect(()=> {
-        console.log(data)
-    }, [data])
-
     if (data) {
         return (
             <div>
@@ -35,7 +30,14 @@ export default function Dashboard() {
                 {
                     data.map((zoning, i) => 
                         <Card key={i}>
-                            <CardActionArea>
+                            <CardActionArea
+                                onClick={() => {}}
+                                sx={{
+                                    '&:hover': {
+                                        backgroundColor: '#95f098'
+                                    }
+                                }}
+                            >
                                 <CardContent>
                                     <Typography variant="h5" component="div">
                                         {zoning.address}
