@@ -25,6 +25,7 @@ export async function POST(request: Request) {
                 Item: {
                     userId,
                     timestamp,
+                    address: result.address,
                     zoningData: result
                 }
             })

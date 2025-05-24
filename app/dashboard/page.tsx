@@ -34,7 +34,7 @@ export default function Dashboard() {
                     data.map((zoning, i) => 
                         <Card key={i}>
                             <CardActionArea
-                                onClick={() => router.push(`/reports/${zoning.userId}/${zoning.timestamp}`)}
+                                onClick={() => router.push(`/reports/${zoning.timestamp}`)}
                                 sx={{
                                     '&:hover': {
                                         backgroundColor: '#95f098'

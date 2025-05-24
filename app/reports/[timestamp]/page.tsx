@@ -1,12 +1,14 @@
+'use client';
+
+import Nav from '@/app/components/Nav';
 import ZoningTable from '@/app/components/ZoningTable';
-import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function ItemPage() {
-    const router = useRouter();
-    const { timestamp } = router.query;
+    const { timestamp } = useParams();
 
-    const [data, setData] = useState<any | null>();
+    const [data, setData] = useState<any | null>(null);
 
     useEffect(() => {
         fetch(`/api/zoning/history/${timestamp}`)
@@ -16,9 +18,14 @@ export default function ItemPage() {
         });
     }, []);
 
-  return (
-    <div>
-        {data ? <ZoningTable zoningData={data} /> : <div>Loading</div>}
-    </div>
+    return (
+        <>
+            <Nav />
+            {data ? (
+                <ZoningTable zoningData={JSON.stringify(data, null, 2)} />
+            ) : (
+                <div>Loading...</div>
+            )}
+        </>
   );
 }
