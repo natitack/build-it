@@ -2,15 +2,25 @@
 
 import { Box, Button, Typography, Stack, ButtonProps } from '@mui/material';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
 import { BuiltItLogo } from './components/BuiltItLogo';
 import { PrimaryButton, TextButton } from './components/Buttons';
+import GhostPostPopup from './components/GhostPostPopup';
 
 export default function HomePage() {
   const router = useRouter();
+  const [postPopupOpen, setPostPopupOpen] = useState(false);
 
   const handleGetStarted = () => {
     router.push('/auth/login?returnTo=/questionnaire');
+  };
+
+  const handleOpenPost = () => {
+    setPostPopupOpen(true);
+  };
+
+  const handleClosePost = () => {
+    setPostPopupOpen(false);
   };
 
   return (
@@ -35,6 +45,9 @@ export default function HomePage() {
         <PrimaryButton onClick={handleGetStarted}>
           Get Started
         </PrimaryButton>
+        <TextButton onClick={handleOpenPost}>
+          Learn More
+        </TextButton>
       </Stack>
 
       {/* Footer CTA */}
@@ -45,6 +58,14 @@ export default function HomePage() {
       <PrimaryButton size="medium">
         Contact Us
       </PrimaryButton>
+
+      {/* Ghost Post Popup */}
+      <GhostPostPopup
+        open={postPopupOpen}
+        onClose={handleClosePost}
+        slug="this-is-a-test-post" // Replace with your actual post slug
+        maxWidth="md"
+      />
     </Box>
   );
 }
