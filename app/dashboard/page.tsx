@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Nav from "../components/Nav"
 import { Card, CardActionArea, CardContent, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function Dashboard() {
 
@@ -58,9 +59,7 @@ export default function Dashboard() {
         )
     } else {
         return (
-            <div>
-                Loading...
-            </div>
+            <LoadingSpinner />
         )
     }
     

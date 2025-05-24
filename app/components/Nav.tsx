@@ -1,46 +1,41 @@
-// app/components/Nav.tsx
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Toolbar } from '@mui/material';
 import Link from 'next/link';
 import { BuiltItLogo } from './BuiltItLogo';
 
-// This is our navigation bar at the top of the website.
 export default function Nav() {
   return (
     <AppBar position="static" color="default" elevation={1} sx={{ backgroundColor: '#e8f5e9' }}>
-      <Toolbar sx={{ minHeight: '64px !important' }}>
+      <Toolbar sx={{ minHeight: '64px !important', display: 'flex', alignItems: 'center' }}>
         
-        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+        {/* Container for logo + links with flexGrow */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexGrow: 1 }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <Box
               sx={{
-                transform: 'scale(1.3)',       // Scale the logo up
-                transformOrigin: 'left center', // Anchor the scale to the left
-                height: '70px',                 // Restrict height so toolbar stays stable
+                flexShrink: 0,               // Prevent shrinking
+                width: 175,                 // Fixed width matching logo size
+                height: 70,                 // Fixed height
                 display: 'flex',
                 alignItems: 'center',
+                // Removed transform: scale() for safer sizing
               }}
             >
-              <BuiltItLogo height={75} width={175}/>
+              <BuiltItLogo height={70} width={175} />
             </Box>
           </Link>
-        </Box>
-        
-        <Box sx={{flexGrow: 15}}>
-          <Link href="/dashboard" style={{color: "black", textDecoration: 'none'}}>
-            <Typography
-                variant="h6"
-                noWrap
-                sx={{
-                mr: 2,
-                fontWeight: 400,
-                
-                }}
-            >
-                Dashboard
-            </Typography>
-        </Link>
+
+          {/* Navigation links right next to the logo with margin-left */}
+          <Box sx={{ display: 'flex', gap: 2, ml: 2 }}>
+            <Button color="inherit" href="/questionnaire">
+              New Report
+            </Button>
+            <Button color="inherit" href="/dashboard">
+              Dashboard
+            </Button>
+          </Box>
         </Box>
 
+        {/* Logout button on the far right */}
         <Box>
           <Button
             variant="outlined"
