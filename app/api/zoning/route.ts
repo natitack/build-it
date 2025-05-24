@@ -26,9 +26,7 @@ export async function POST(request: Request) {
                     userId,
                     timestamp,
                     address: result.address,
-                    zoningCode: result.zoningCode,
-                    coordinates: result.coordinates,
-                    zoningInfo: result.zoningInfo
+                    zoningData: result
                 }
             })
         )
