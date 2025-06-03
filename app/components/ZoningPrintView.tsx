@@ -43,6 +43,8 @@ const ZoningPrintView = forwardRef<HTMLDivElement, any>(({ address, coordinates,
     );
 });
 
+ZoningPrintView.displayName = "ZoningPrintView";
+
 export default ZoningPrintView;
 
 const renderTable = (data: any, columnLabels = ["Use", "Status"]) => (
