@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import html2pdf from 'html2pdf.js'
 import {
   Accordion,
   AccordionSummary,
@@ -26,8 +25,10 @@ export function ZoningTable(props: { zoningData: string }) {
   const pdfRef = useRef<HTMLDivElement>(null);
 
 
-  function downloadPDF() {
+  async function downloadPDF() {
     if (!pdfRef.current) return;
+
+    const html2pdf = (await import('html2pdf.js')).default;
 
     const opt = {
       margin: 0.3,
