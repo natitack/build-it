@@ -11,39 +11,39 @@ import {
     Paper,
 } from '@mui/material';
 
-const ZoningPrintView = forwardRef<HTMLDivElement, any>(({ address, coordinates, zoningCode, zoningInfo }: any, ref) => {
-    const { Name, ...categories } = zoningInfo;
+const ZoningPrintView = forwardRef<HTMLDivElement, any>(
+    function ZoningPrintViewComponent({ address, coordinates, zoningCode, zoningInfo }: any, ref) {
+        const { Name, ...categories } = zoningInfo;
 
-    return (
-        <div ref={ref} style={{ padding: '1rem', maxWidth: '1500px', margin: '0 auto' }}>
-            <Typography variant="h5" gutterBottom>Address Information</Typography>
-            {renderTable({
-                Address: address,
-                Latitude: coordinates.lat,
-                Longitude: coordinates.lon,
-                'Zoning Code': zoningCode,
-                'Zoning Name': Name
-            }, ["Detail", "Value"])}
+        return (
+            <div ref={ref} style={{ padding: '1rem', maxWidth: '1500px', margin: '0 auto' }}>
+                <Typography variant="h5" gutterBottom>Address Information</Typography>
+                {renderTable({
+                    Address: address,
+                    Latitude: coordinates.lat,
+                    Longitude: coordinates.lon,
+                    'Zoning Code': zoningCode,
+                    'Zoning Name': Name
+                }, ["Detail", "Value"])}
 
-            <Box height={35}></Box>
+                <Box height={35}></Box>
 
-            <Typography variant="h5" gutterBottom>Zoning Details</Typography>
-            {
-                Object.entries(categories).map(([category, uses]) => (
-                    <div key={category}>
-                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-                            {category.toLowerCase() === "residential" ? Name : category}
-                        </Typography>
-                        {renderTable(uses)}
-                        <Box height={15}></Box>
-                    </div>
-                ))
-            }
-        </div>
-    );
-});
-
-ZoningPrintView.displayName = "ZoningPrintView";
+                <Typography variant="h5" gutterBottom>Zoning Details</Typography>
+                {
+                    Object.entries(categories).map(([category, uses]) => (
+                        <div key={category}>
+                            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+                                {category.toLowerCase() === "residential" ? Name : category}
+                            </Typography>
+                            {renderTable(uses)}
+                            <Box height={15}></Box>
+                        </div>
+                    ))
+                }
+            </div>
+        );
+    }
+);
 
 export default ZoningPrintView;
 
