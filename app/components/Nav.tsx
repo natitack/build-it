@@ -32,6 +32,9 @@ export default function Nav() {
             <Button color="inherit" href="/dashboard">
               Dashboard
             </Button>
+            <Button color="inherit" href="/blog">
+              Blog
+            </Button>
           </Box>
         </Box>
 
