@@ -124,9 +124,6 @@ export default function QuestionnairePage() {
       {/* Zoning Result */}
       {zoningResult && (
         <Box maxWidth="md" mx="auto" py={6} px={2}>
-          <Typography variant="h6" gutterBottom>
-            Zoning Information
-          </Typography>
           <ZoningTable zoningData={JSON.stringify(zoningResult, null, 2)} />
         </Box>
       )}
