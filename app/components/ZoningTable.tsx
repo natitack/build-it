@@ -17,13 +17,36 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { PrimaryButton } from '@/app/components/Buttons';
 import ZoningPrintView from './ZoningPrintView';
+import GhostPostPopup from './GhostPostPopup';
 
 export function ZoningTable(props: { zoningData: string }) {
   const { address, coordinates, zoningCode, zoningInfo } = JSON.parse(props.zoningData);
   const { Name, ...categories } = zoningInfo;
 
   const pdfRef = useRef<HTMLDivElement>(null);
+  const [ghostPopupOpen, setGhostPopupOpen] = useState(false);
+  const [selectedSlug, setSelectedSlug] = useState('');
 
+  // Function to convert use names to URL-friendly slugs
+  const convertToSlug = (useName: string): string => {
+    return useName
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '') // Remove special characters except spaces and hyphens
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+      .trim();
+  };
+
+  const handleRowClick = (useName: string) => {
+    const slug = convertToSlug(useName);
+    setSelectedSlug(slug);
+    setGhostPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setGhostPopupOpen(false);
+    setSelectedSlug('');
+  };
 
   async function downloadPDF() {
     if (!pdfRef.current) return;
@@ -57,7 +80,7 @@ export function ZoningTable(props: { zoningData: string }) {
           Longitude: coordinates.lon,
           'Zoning Code': zoningCode,
           'Zoning Name': Name
-        }, ["Detail", "Value"])}
+        }, ["Detail", "Value"], false, handleRowClick)}
 
         <Box height={35}></Box>
 
@@ -65,9 +88,10 @@ export function ZoningTable(props: { zoningData: string }) {
         {
           Object.keys(categories).length === 0
             ? emptyDetails()
-            : zoningDetails(categories, Name)
+            : zoningDetails(categories, Name, handleRowClick)
         }
       </div>
+      
       <div style={{ display: 'none' }}>
         <ZoningPrintView
           ref={pdfRef}
@@ -77,12 +101,22 @@ export function ZoningTable(props: { zoningData: string }) {
           zoningInfo={zoningInfo}
         />
       </div>
+
+      {/* Ghost Post Popup */}
+      <GhostPostPopup
+        open={ghostPopupOpen}
+        onClose={handleClosePopup}
+        slug={selectedSlug}
+        maxWidth="lg"
+        fullWidth={true}
+      />
     </div>
   );
 };
+
 export default ZoningTable;
 
-const zoningDetails = (categories: any, Name: string) => {
+const zoningDetails = (categories: any, Name: string, onRowClick: (useName: string) => void) => {
   return (
     <div>{Object.entries(categories).map(([category, uses]) => (
       <Accordion key={category} disableGutters sx={{
@@ -94,7 +128,7 @@ const zoningDetails = (categories: any, Name: string) => {
           <Typography variant="subtitle1" fontWeight="bold">{category.toLocaleLowerCase() == "residential" ? Name : category}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {renderTable(uses)}
+          {renderTable(uses, undefined, true, onRowClick)}
         </AccordionDetails>
       </Accordion>
     ))}
@@ -105,26 +139,44 @@ const zoningDetails = (categories: any, Name: string) => {
 const emptyDetails = () => {
   return (
     <div>
-      No zoning details avaliable.
+      No zoning details available.
     </div>
   );
 }
 
-const renderTable = (data: any, columnLabels = ["Use", "Status"]) => {
+const renderTable = (
+  data: any, 
+  columnLabels = ["Use", "Status"], 
+  enableRowClick = false, 
+  onRowClick?: (useName: string) => void
+) => {
   return (
     <TableContainer component={Paper} sx={{ marginY: 1 }}>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell sx={{ backgroundColor: '#4caf50', color: "white" }}><strong>{columnLabels[0]}</strong></TableCell>
-            <TableCell sx={{ backgroundColor: '#4caf50', color: "white" }}><strong>{columnLabels[1]}</strong></TableCell>
+            <TableCell sx={{ backgroundColor: '#4caf50', color: "white" }}>
+              <strong>{columnLabels[0]}</strong>
+            </TableCell>
+            <TableCell sx={{ backgroundColor: '#4caf50', color: "white" }}>
+              <strong>{columnLabels[1]}</strong>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {Object.entries(data).map(([key, value]) => {
             if (typeof value === 'object') {
               return Object.entries(value).map(([subKey, subValue]) => (
-                <TableRow key={`${key}-${subKey}`}>
+                <TableRow 
+                  key={`${key}-${subKey}`}
+                  onClick={enableRowClick && onRowClick ? () => onRowClick(`${key} ${subKey}`) : undefined}
+                  sx={enableRowClick ? {
+                    cursor: 'pointer',
+                    '&:hover': {
+                      backgroundColor: '#f5f5f5',
+                    }
+                  } : {}}
+                >
                   <TableCell>{`${key} - ${subKey}`}</TableCell>
                   <TableCell>{subValue}</TableCell>
                 </TableRow>
@@ -132,7 +184,16 @@ const renderTable = (data: any, columnLabels = ["Use", "Status"]) => {
             }
             if (value) {
               return (
-                <TableRow key={key}>
+                <TableRow 
+                  key={key}
+                  onClick={enableRowClick && onRowClick ? () => onRowClick(key) : undefined}
+                  sx={enableRowClick ? {
+                    cursor: 'pointer',
+                    '&:hover': {
+                      backgroundColor: '#f5f5f5',
+                    }
+                  } : {}}
+                >
                   <TableCell>{key}</TableCell>
                   <TableCell>{value.toString()}</TableCell>
                 </TableRow>
