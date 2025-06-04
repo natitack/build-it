@@ -174,6 +174,8 @@ export default function GhostPostPopup({
             <Box
               dangerouslySetInnerHTML={{ __html: post.html }}
               sx={{
+                paddingLeft: 2, // Add left padding
+                paddingRight: 2, // Add right padding
                 '& p': { 
                   mb: 2, 
                   lineHeight: 1.7,
@@ -234,7 +236,7 @@ export default function GhostPostPopup({
                   my: 2,
                 },
                 '& a': {
-                  color: 'primary.main',
+                  color: '#4caf50', // Updated link color
                   textDecoration: 'none',
                   '&:hover': {
                     textDecoration: 'underline',
