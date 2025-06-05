@@ -29,11 +29,28 @@ export default function Dashboard() {
 
     if (data) {
         return (
-            <div>
-                <Nav />
+            <>
+            <Nav />
+            <div style={{
+                maxWidth: 1000,
+                margin: '2.5rem auto',
+                padding: '2.5rem 2rem',
+                background: '#fff',
+                borderRadius: 16,
+                boxShadow: '0 2px 16px rgba(0,0,0,0.10)',
+                fontFamily: 'Stratum2, Open Sans, system-ui, sans-serif',
+            }}>
+                
+                <h1 style={{
+                    marginBottom: '2rem',
+                    fontSize: '2rem',
+                    textAlign: 'center',
+                    fontWeight: 600,
+                    letterSpacing: '0.01em',
+                }}>Previous searches</h1>
                 {
                     data.map((zoning, i) => 
-                        <Card key={i}>
+                        <Card key={i} sx={{ marginBottom: 2 }}>
                             <CardActionArea
                                 onClick={() => router.push(`/reports/${zoning.timestamp}`)}
                                 sx={{
@@ -56,6 +73,7 @@ export default function Dashboard() {
                 }
                 
             </div>
+            </>
         )
     } else {
         return (
