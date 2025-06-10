@@ -2,8 +2,17 @@ import zoningLookup from './zoningLookup.json'
 
 export async function getZoningData(address: string) {
 
-    const nomRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json`);
+    console.log("Start")
+    const nomRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json`, {
+        headers: {
+            'User-Agent': 'BuildIt/1.0 (colburnw@oregonstate.edu)'
+        }
+    });
+    console.log("half")
+    console.log(nomRes)
     const nomData = await nomRes.json();
+
+    console.log("Hello!")
 
     if (!nomData || !nomData[0]) {
         throw new Error('No location found');
