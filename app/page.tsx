@@ -51,9 +51,9 @@ export default function HomePage() {
       </Stack>
 
       {/* Footer CTA */}
-      {/* <Typography variant="body1" gutterBottom>
+      <Typography variant="body1" gutterBottom>
         {"Interested in partnering with us? We'd love to hear from you!"}
-      </Typography> */}
+      </Typography>
 
       {/* <PrimaryButton size="medium">
         Contact Us
