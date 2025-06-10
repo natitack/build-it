@@ -8,7 +8,7 @@ export default function LoadingSpinner() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: '100vh', // full viewport height
       }}
     >
       <CircularProgress />
