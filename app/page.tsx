@@ -45,9 +45,9 @@ export default function HomePage() {
         <PrimaryButton onClick={handleGetStarted}>
           Get Started
         </PrimaryButton>
-        <TextButton onClick={handleOpenPost}>
+        {/* <TextButton onClick={handleOpenPost}>
           Learn More
-        </TextButton>
+        </TextButton> */}
       </Stack>
 
       {/* Footer CTA */}
@@ -55,9 +55,9 @@ export default function HomePage() {
         {"Interested in partnering with us? We'd love to hear from you!"}
       </Typography>
 
-      <PrimaryButton size="medium">
+      {/* <PrimaryButton size="medium">
         Contact Us
-      </PrimaryButton>
+      </PrimaryButton> */}
 
       {/* Ghost Post Popup */}
       <GhostPostPopup
